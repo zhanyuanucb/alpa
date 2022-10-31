@@ -496,7 +496,7 @@ class FlaxBloomForCausalLMModule(nn.Module):
         self.lm_head = nn.Dense(
             self.config.vocab_size,
             use_bias=False,
-            dtype=jnp.float32,
+            dtype=jnp.float16,
             kernel_init=jax.nn.initializers.normal(stddev=self.config.initializer_range),
         )
 
